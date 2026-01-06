@@ -30,3 +30,21 @@ resultOfDivide100ByUserInputFunction = divide100ByUserInput()
 
 print(result)
 print(resultOfDivide100ByUserInputFunction)
+
+# alternative -> there are many different ways to design a program
+
+
+def divide_100_by_user_input():
+    try:
+        number_the_user_choose = float(input("Please enter your number: "))
+    except ValueError:
+        print("The Number is invalid. Please enter a valid number!")
+        return (
+            divide_100_by_user_input()
+        )  # Does this make sense ? Recursive functions are a bad thing in programming. Have a look yourself! :)
+    result_of_the_calculations = 100 / number_the_user_choose
+    return result_of_the_calculations
+
+
+result_of_the_calculation = divide_100_by_user_input()
+print(result_of_the_calculation)
